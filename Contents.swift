@@ -9,7 +9,7 @@
  
  */
 
-import UIKit
+//import UIKit
 
 /*
  La enumeración Velocidades cuenta con los siguientes elementos y sus respectivos valores:
@@ -63,23 +63,24 @@ class Auto {
     // Función de cambio de velocidad
     func cambioDeVelocidad( ) -> (actual: Int, velocidadEnCadena: String){
         // Se define una constante temporal
-        let mensaje : String
-        switch self.velocidad {
+        let mensaje : String        
+	let actual : Int = self.velocidad.rawValue
+	switch self.velocidad {
         case .Apagado:
             self.velocidad = .VelocidadBaja
-            mensaje = "Velocidad Baja"
+            mensaje = "Apagado"	
         case .VelocidadBaja:
             self.velocidad = .VelocidadMedia
-            mensaje = "Velocidad Media"
+            mensaje = "Velocidad Baja"
         case .VelocidadMedia:
             self.velocidad = .VelocidadAlta
-            mensaje = "Velocidad Alta"
+            mensaje = "Velocidad Media"
         case .VelocidadAlta:
             self.velocidad = .VelocidadMedia
-            mensaje = "Velocidad Media"
+            mensaje = "Velocidad Alta"
         }
         
-        return (actual: self.velocidad.rawValue, velocidadEnCadena: mensaje)
+        return (actual: actual, velocidadEnCadena: mensaje)
     }
     
 }
